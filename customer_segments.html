@@ -13663,7 +13663,7 @@ SUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The three features I noted above as having a positive R^2 score are positively correlated -- detergent/paper, milk, and grocery. The best correlation seems to be between grocery and detergent/paper. As one feature increases, so does the other, and the correlation is tighter in the grocery-detergent plot. The bulk of the data points are closer to the origin in all cases, and the milk-grocery and milk-detergent plots have more outliers.</p>
+<p>The three features I noted above as having a positive R^2 score are positively correlated -- detergent/paper, milk, and grocery. The best correlation seems to be between grocery and detergent/paper. As one feature increases, so does the other, and the correlation is tighter in the grocery-detergent plot. The data points skew positively, and the milk-grocery and milk-detergent plots have more outliers.</p>
 
 </div>
 </div>
@@ -17950,6 +17950,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 <span class="c1"># Generate PCA results plot</span>
 <span class="n">pca_results</span> <span class="o">=</span> <span class="n">vs</span><span class="o">.</span><span class="n">pca_results</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -18289,10 +18290,10 @@ NKsAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>70.68% of the variance is explained by the first two principal components. The first four principal components account for 93.11% of the variance.</p>
 <p>In the following analysis, I use a weight of about 0.5 as a threshold of significance.</p>
-<p>The first dimension is most heavily correlated to decreased spending on detergents/paper. So general spending is increased when detergents/paper are not a significant factor in spending.</p>
-<p>The second dimension is most heavily correlated to a combination of decreased spending in fresh, frozen, and deli items. In this new feature, customers with decreased spending in these three areas have increased general spending.</p>
-<p>The third dimension indicates increased spending on deli and decreased spending on fresh are correlated with increased overall spending.</p>
-<p>The fourth dimension correlates increased spending on frozen and decreased spending on deli with general increased overall spending.</p>
+<p>The first dimension is most heavily correlated to decreased spending on detergents/paper. So general spending is increased when detergents/paper are not a significant factor in spending. This would be typical of a food service establishment.</p>
+<p>The second dimension is most heavily correlated to a combination of decreased spending in fresh, frozen, and deli items. In this new feature, customers with decreased spending in these three areas have increased general spending. This would be typical of a retail establishment.</p>
+<p>The third dimension indicates increased spending on deli and decreased spending on fresh are correlated with increased overall spending. This might be typical of a food service establishment.</p>
+<p>The fourth dimension correlates increased spending on frozen and decreased spending on deli with general increased overall spending. This might be typical of a food service establishment.</p>
 
 </div>
 </div>
@@ -20484,8 +20485,8 @@ AAAA2g6FEAAAAIC28/8BT3J/QX63HTYAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A customer assigned to a daycare or retailer should identify best with establishments represented by the feature set of Segment 0.
-A customer assigned to a cafe or restaurant should identify best with establishments represented by the feature set of Segment 1.</p>
+<p>Segment 0: Whereas Detergents_Paper and Grocery are higher than the 75th percentile of all records, Fresh, Frozen, and Delicatessen are well below the mean. A customer assigned to a retailer should identify best with establishments represented by the feature set of Segment 0.</p>
+<p>Segment 1: In this segment, Grocery, Milk, and Detergents_Paper are below the median (and Detergents_Paper is also below the mean), whereas Frozen, Fresh, and Deli are above the median. A customer assigned to a cafe or restaurant should identify best with establishments represented by the feature set of Segment 1.</p>
 
 </div>
 </div>
